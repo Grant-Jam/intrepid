@@ -133,9 +133,10 @@ function PlaceSpaces()
 			var currentSpace = map[i][j];
 			if (currentSpace != noone)
 			{
-				var spaceObj = instance_create_layer(currentSpace.gridX*gridSize, currentSpace.gridY*gridSize, "Instances", oSpace);
-				spaceObj.spaceStruct = currentSpace;
-				with (spaceObj) event_user(0);
+				//var spaceObj = instance_create_layer(currentSpace.gridX*gridSize, currentSpace.gridY*gridSize, "Instances", oSpace);
+				//spaceObj.spaceStruct = currentSpace;
+				//with (spaceObj) event_user(0);
+				create_space_objects(currentSpace);
 			}
 		}
 	}

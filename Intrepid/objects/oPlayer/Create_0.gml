@@ -29,7 +29,7 @@ jump = 0;
 hsp = 0;
 vsp = 0;
 movespeed = 1.5;
-dashspeed = 2.7;
+dashspeed = 2.5;
 jumpspeed = -5;
 highjumpspeed = -6.5;
 

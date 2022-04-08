@@ -20,6 +20,8 @@ function generate_map(){
 	
 	b = GeneratePath(a[bStart], 10);
 	
+	map[7][0].cUp = true;
+	
 	show_debug_message("finished map array");
 	
 	PlaceSpaces();

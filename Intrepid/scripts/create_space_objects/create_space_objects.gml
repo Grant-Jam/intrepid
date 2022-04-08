@@ -2,8 +2,8 @@
 /// @param ???
 function create_space_objects(spStruct)
 {
-	var startX = spStruct.gridX*gridSize*9;
-	var startY = spStruct.gridY*gridSize*9;
+	var startX = spStruct.gridX*gridSize*11;
+	var startY = spStruct.gridY*gridSize*11;
 	var room_grid = noone;
 	
 	var up = spStruct.cUp;
@@ -88,10 +88,39 @@ function create_space_objects(spStruct)
 	{
 		for (var yy = 0; yy < ds_grid_height(room_grid); yy++)
 		{
-			if (room_grid[# xx, yy] == 12)
+			currentTileID = room_grid[# xx, yy];
+			if (currentTileID == 12)
 			{
-				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize), "Floor", oGround);
+				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Floor", oGround);
+			}
+			else if (currentTileID == 832)
+			{
+				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Enemies", oEnemyCrawl);
+			}
+			
+			else if (currentTileID == 800)
+			{
+				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Enemies", oEnemyFly);
+			}
+			else if (currentTileID == 736)
+			{
+				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Enemies", oEnemyWalk);
+			}
+			else if (currentTileID == 645 && spStruct == b[array_length(b)-1])
+			{
+				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oEnd);
 			}
 		}
+	}
+	
+	//place doors
+	if (left)
+	{
+		instance_create_layer(startX + (0*gridSize), startY + (9*gridSize) + y, "Floor", oDoorV);
+	}
+	if (up)
+	{
+		var door = instance_create_layer(startX + (5*gridSize), startY + (0*gridSize) + y, "Floor", oDoorV);
+		door.image_angle = 90;
 	}
 }

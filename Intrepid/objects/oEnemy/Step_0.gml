@@ -1,4 +1,4 @@
-/// @description Movement
+/// @description Movement and damage
 
 bullethit = instance_place(x, y, oBullet);
 if (bullethit != noone)

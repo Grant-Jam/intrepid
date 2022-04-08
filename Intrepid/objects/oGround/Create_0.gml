@@ -1,2 +1,2 @@
 /// @description ?
-testvariable = 7;
+collidable = true;

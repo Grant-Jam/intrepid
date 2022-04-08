@@ -11,4 +11,5 @@ function player_buttons(){
 	bomb = keyboard_check_pressed(ord("H")) || gamepad_button_check_pressed(0, gp_face4);
 	rocket = keyboard_check_pressed(ord("U")) || gamepad_button_check_pressed(0, gp_face2);
 	dash = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderr);
+	select = keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0, gp_select);
 }

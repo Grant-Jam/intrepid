@@ -5,7 +5,7 @@ function collision_check(){
 	//horizontal collision
 	if (place_meeting(x+hsp,y, oGround))
 	{
-		while (!place_meeting(x+sign(hsp),y, oGround))
+		while (instance_place(x+sign(hsp),y, oGround) == noone)
 		{
 			x += sign(hsp);
 		}

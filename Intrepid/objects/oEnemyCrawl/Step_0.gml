@@ -12,6 +12,7 @@ switch movedirection
 		{
 			movedirection = dir.up;
 			image_angle += 90;
+			x -= 1;
 		}
 		else if (!place_meeting(x, y+1, oGround))
 		{
@@ -28,6 +29,7 @@ switch movedirection
 		{
 			movedirection = dir.down;
 			image_angle += 90;
+			x += 1;
 		}
 		else if (!place_meeting(x, y-1, oGround))
 		{
@@ -44,7 +46,7 @@ switch movedirection
 		{
 			movedirection = dir.left;
 			image_angle += 90;
-			
+			y += 1;
 		}
 		else if (!place_meeting(x+1, y, oGround))
 		{
@@ -61,7 +63,7 @@ switch movedirection
 		{
 			movedirection = dir.right;
 			image_angle += 90;
-			
+			y -= 1;
 		}
 		else if (!place_meeting(x-1, y, oGround))
 		{

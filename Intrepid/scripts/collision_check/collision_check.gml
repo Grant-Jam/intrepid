@@ -20,13 +20,13 @@ function collision_check(){
 		//	show_debug_message("Headspace: " + string(x - vBlock.x));
 			
 		//jump correction
-		var vDifference = x - vBlock.x;
-		if ((vsp < 0) && vDifference <= -11.5) 
-			x += -13 - vDifference;
-		else if ((vsp < 0) && vDifference >= 11.5) 
-			x += 13 - vDifference;
+		//var vDifference = x - vBlock.x;
+		//if ((vsp < 0) && vDifference <= -11.5) 
+		//	x += -13 - vDifference;
+		//else if ((vsp < 0) && vDifference >= 11.5) 
+		//	x += 13 - vDifference;
 		
-		else 
+		//else 
 		{
 			while (!place_meeting(x,y+sign(vsp), oGround))
 			{
@@ -38,6 +38,4 @@ function collision_check(){
 		}
 	}
 	else grounded = false;
-	
-	//if (vsp < 0 && vBlock != noone) show_debug_message("Headspace: " + string(x - vBlock.x));
 }

@@ -52,5 +52,8 @@ shrinkunlocked = false;
 dashunlocked = false;
 rocketsunlocked = false;
 
+//gui stuff
+debugGui = false;
+
 audio_falloff_set_model(audio_falloff_exponent_distance);
 audio_listener_orientation(0, 0, -1000, 0, 1, 0);

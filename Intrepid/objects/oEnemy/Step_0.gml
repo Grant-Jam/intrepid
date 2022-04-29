@@ -1,6 +1,4 @@
 /// @description Movement and damage
-//audio setup
-
 bullethit = instance_place(x, y, oBullet);
 if (bullethit != noone)
 {

@@ -8,4 +8,4 @@ flashTimer = 0;
 bombinvincibility = 0;
 bombinvincible = false;
 
-emitter = audio_emitter_create();
+//emitter = audio_emitter_create();

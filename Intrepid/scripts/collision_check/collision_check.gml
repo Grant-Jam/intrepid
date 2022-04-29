@@ -13,14 +13,31 @@ function collision_check(){
 	}
 	
 	//vertical collision
-	if (place_meeting(x,y+vsp, oGround))
+	var vBlock = instance_place(x, y+vsp, oGround);
+	if (vBlock != noone)
 	{
-		while (!place_meeting(x,y+sign(vsp), oGround))
+		//if (instance_find(oPlayer, 0) == id && vsp < 0)
+		//	show_debug_message("Headspace: " + string(x - vBlock.x));
+			
+		//jump correction
+		var vDifference = x - vBlock.x;
+		if ((vsp < 0) && vDifference <= -11.5) 
+			x += -13 - vDifference;
+		else if ((vsp < 0) && vDifference >= 11.5) 
+			x += 13 - vDifference;
+		
+		else 
 		{
-			y += sign(vsp);
+			while (!place_meeting(x,y+sign(vsp), oGround))
+			{
+				y += sign(vsp);
+			}
+		
+			if (vsp > 0) grounded = true;
+			vsp = 0;
 		}
-		if (vsp > 0) grounded = true;
-		vsp = 0;
 	}
 	else grounded = false;
+	
+	//if (vsp < 0 && vBlock != noone) show_debug_message("Headspace: " + string(x - vBlock.x));
 }

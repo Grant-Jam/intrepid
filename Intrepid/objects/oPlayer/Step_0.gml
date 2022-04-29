@@ -11,15 +11,12 @@ if (jump != 0 && grounded) {
 	grounded = false;
 	if (highjumpunlocked) vsp = highjumpspeed;
 	else vsp = jumpspeed;
-	//audio_play_sound(sndJump, 1, false);
+	audio_play_sound(sndJump, 1, false);
 }
 
 //Variable jump height
 if (vsp < 0 && !jumpheld) vsp *= 0.7;
 	
-//collision
-grav_fall();
-collision_check();
 
 //Fire bullet and cooldown
 if (attack != 0 && shootcooldown == 0)
@@ -59,13 +56,19 @@ if (place_meeting(x, y, oEnemy) && !invincible)
 }
 if (invincible)
 {
+	flashing = true;
 	iframes++;
 	if (iframes >= iframesmax)
 	{
 		iframes = 0;
 		invincible = false;
+		flashing = false;
 	}
 }
+
+//collision
+grav_fall();
+collision_check();
 
 //Switching sprite
 if (hsp > 0) image_xscale = 1;
@@ -73,6 +76,9 @@ else if (hsp < 0) image_xscale = -1;
 
 //animation
 frame_counter();
+
+//flashing
+check_flashing();
 
 x += hsp;
 y += vsp;

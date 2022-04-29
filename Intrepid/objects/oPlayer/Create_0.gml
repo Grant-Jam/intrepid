@@ -39,9 +39,18 @@ shootcooldown = 0;
 maxbombs = 5;
 bombs = maxbombs;
 
+//getting attacked
+hitStunned = false;
+flashing = false;
+flashSpeed = 3;
+flashTimer = 0;
+
 //item unlocks
 highjumpunlocked = false;
 wallbreakerunlocked = false;
 shrinkunlocked = false;
 dashunlocked = false;
 rocketsunlocked = false;
+
+audio_falloff_set_model(audio_falloff_exponent_distance);
+audio_listener_orientation(0, 0, -1000, 0, 1, 0);

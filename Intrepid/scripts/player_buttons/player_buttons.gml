@@ -12,4 +12,6 @@ function player_buttons(){
 	rocket = keyboard_check_pressed(ord("U")) || gamepad_button_check_pressed(0, gp_face2);
 	dash = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderr);
 	select = keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0, gp_select);
+	start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_start);
+	escape = keyboard_check_pressed(vk_escape);
 }

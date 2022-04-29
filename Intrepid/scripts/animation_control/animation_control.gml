@@ -8,9 +8,9 @@ function animation_control(){
 		facing = 1;
 			
 	if (left > 0 || right > 0)
-		sprite = sPlayer_Move2;
+		sprite = sPlayer_Move3;
 	else
-		sprite = sPlayer_Idle2;
+		sprite = sPlayer_Idle3;
 	
 	//reset frame to 0 if sprite changes
 	if (lastSprite != sprite) {

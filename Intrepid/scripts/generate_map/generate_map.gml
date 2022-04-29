@@ -1,9 +1,9 @@
 function generate_map(){
 	mapWidth = 50;
 	mapHeight = 50;
-	for (i = mapWidth; i >= 0; i--)
+	for (var i = mapWidth; i >= 0; i--)
 	{
-		for (j = mapHeight; j >= 0; j--)
+		for (var j = mapHeight; j >= 0; j--)
 		{
 			map[i][j] = noone;
 		}
@@ -25,6 +25,17 @@ function generate_map(){
 	show_debug_message("finished map array");
 	
 	PlaceSpaces();
+	
+	//place doors
+	for (var i = array_length(b) - 1; i >= 0; i--)
+	{
+		create_doors(b[i], oBreakableWall);
+	}
+	for (var i = array_length(a) - 1; i >= 0; i--)
+	{
+		create_doors(a[i], oDoorV);
+	}
+	create_doors(map[7][0], oDoorV);
 }
 
 function Space(gX, gY) constructor

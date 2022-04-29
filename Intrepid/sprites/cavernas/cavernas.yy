@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Imported Sprites",
+    "path": "folders/Sprites/Imported Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "cavernas",

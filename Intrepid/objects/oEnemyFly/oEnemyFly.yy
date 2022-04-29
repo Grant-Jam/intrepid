@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprEnemyFly",
-    "path": "sprites/sprEnemyFly/sprEnemyFly.yy",
+    "name": "sprEnemyFly2",
+    "path": "sprites/sprEnemyFly2/sprEnemyFly2.yy",
   },
   "solid": false,
   "visible": true,

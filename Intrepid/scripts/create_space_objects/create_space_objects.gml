@@ -106,21 +106,53 @@ function create_space_objects(spStruct)
 			{
 				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Enemies", oEnemyWalk);
 			}
-			else if (currentTileID == 645 && spStruct == b[array_length(b)-1])
+			else if (currentTileID == 645)
 			{
-				instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oEnd);
+				if (spStruct == b[array_length(b)-1])
+					instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oEnd);
+				else if (spStruct == a[array_length(a)-1])
+					instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oItemBreaker);
 			}
 		}
 	}
 	
+	//determine door set
+	//if (spStruct == 
+	
 	//place doors
-	if (left)
-	{
-		instance_create_layer(startX + (0*gridSize), startY + (9*gridSize) + y, "Floor", oDoorV);
-	}
-	if (up)
-	{
-		var door = instance_create_layer(startX + (5*gridSize), startY + (0*gridSize) + y, "Floor", oDoorV);
-		door.image_angle = 90;
-	}
+	//create_doors(spStruct, oDoorV);
+	//if (left)
+	//{
+	//	var doorTargetX = startX + (0*gridSize);
+	//	var doorTargetY = startY + (9*gridSize) + y;
+	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
+	//		instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
+	//}
+	//if (right)
+	//{
+	//	var doorTargetX = startX + (11*gridSize);
+	//	var doorTargetY = startY + (9*gridSize) + y;
+	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
+	//		instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
+	//}
+	//if (up)
+	//{
+	//	var doorTargetX = startX + (5*gridSize);
+	//	var doorTargetY = startY + (0*gridSize) + y;
+	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
+	//	{
+	//		var door = instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
+	//		door.image_angle = 90;
+	//	}
+	//}
+	//if (down)
+	//{
+	//	var doorTargetX = startX + (5*gridSize);
+	//	var doorTargetY = startY + (11*gridSize) + y;
+	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
+	//	{
+	//		var door = instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
+	//		door.image_angle = 90;
+	//	}
+	//}
 }

@@ -20,3 +20,5 @@ else
 
 lifetime = 60;
 damage = 1;
+
+audio_play_sound_at(sndShoot, x, y, 0, 100, 300, 1, false, 1);

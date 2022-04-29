@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprEnemyWalk",
-    "path": "sprites/sprEnemyWalk/sprEnemyWalk.yy",
+    "name": "sprEnemyWalk2",
+    "path": "sprites/sprEnemyWalk2/sprEnemyWalk2.yy",
   },
   "solid": false,
   "visible": true,

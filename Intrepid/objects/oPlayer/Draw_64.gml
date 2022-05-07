@@ -29,10 +29,10 @@ else
 	draw_text(150, 10, "BOMB x" + string(bombs));
 	
 	//check for wallbreaker
-	if (wallbreakerunlocked)
+	/*if (wallbreakerunlocked)
 	{
 		draw_set_halign(fa_center);
 		draw_text(view_wport[0]/2, view_hport[0] - 20, "You've unlocked the Wall Breaker!");
 		draw_set_halign(fa_left);
-	}
+	}*/
 }

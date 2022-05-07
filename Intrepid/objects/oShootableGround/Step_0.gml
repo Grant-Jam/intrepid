@@ -6,7 +6,7 @@ if (collidedbullet != noone)
 	
 	if (oPlayer.wallbreakerunlocked)
 	{
-		audio_play_sound_at(sndHit, x, y, 0, 100, 30, 1, false, 1);
+		audio_play_sound_at(sndHit, x, y, 0, 100, 30, 0.2, false, 1);
 		instance_destroy();
 	}
 }

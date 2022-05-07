@@ -8,6 +8,8 @@ spd = 5;
 hsp = 0;
 vsp = 0;
 
+if (oPlayer.wallbreakerunlocked) sprite_index = sprBulletBreaker;
+
 if (up != 0) {vsp = -spd; image_angle = 90;}
 else if (down != 0) {vsp = spd; image_angle = 270;}
 else if (left != 0) {hsp = -spd; image_angle = 180;}

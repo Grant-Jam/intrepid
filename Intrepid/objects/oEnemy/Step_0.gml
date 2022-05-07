@@ -7,7 +7,7 @@ if (bullethit != noone)
 	flashing = true;
 	alarm[0] = 45;
 	show_debug_message("soundDif: " + string(x - oPlayer.x));
-	audio_play_sound_at(sndHit, x, y, 0, 100, 30, 1, false, 1);
+	audio_play_sound_at(sndHit, x, y, 0, 100, 30, 0.2, false, 1);
 }
 
 bombhit = instance_place(x, y, oExplode);

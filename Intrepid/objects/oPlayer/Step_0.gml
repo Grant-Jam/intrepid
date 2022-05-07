@@ -45,9 +45,15 @@ if (rocketsunlocked && rocket != 0 && bombs > 0)
 if (place_meeting(x, y, oEnemy) && !invincible)
 {
 	hp--;
+	audio_play_sound(sndHit, 1, false);
 	
 	//Dying
-	if (hp <= 0) game_restart();
+	if (hp <= 0)
+	{
+		oGameManager.dead = true;
+		audio_play_sound(sndKill, 1, false);
+		create_popup("You perished on the unknown planet.\n\nPress Jump to retry.\nPress Shoot to quit.");
+	}
 	
 	//Hit iframes
 	hsp = -16 * image_xscale;

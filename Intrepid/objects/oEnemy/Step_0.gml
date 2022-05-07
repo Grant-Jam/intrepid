@@ -25,6 +25,16 @@ else bombinvincible = false;
 if (hp <= 0) 
 {
 	instance_destroy();
+	//1 in 4 chance to drop bombs
+	if (irandom_range(0,3) == 3)
+	{
+		instance_create_layer(x+irandom_range(-4,4), y+irandom_range(-4,4), "Player", oPickupBomb);
+	}
+	//1 in 6 chance to drop health
+	if (irandom_range(0,5) == 5)
+	{
+		instance_create_layer(x+irandom_range(-4,4), y+irandom_range(-4,4), "Player", oPickupHealth);
+	}
 	audio_play_sound_at(sndKill, x, y, 0, 100, 30, 1, false, 1);
 }
 

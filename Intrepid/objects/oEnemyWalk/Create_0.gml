@@ -2,7 +2,7 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 2;
+hp = 3;
 
 vsp = 0;
 hsp = facingleft ? -0.5 : -0.5;

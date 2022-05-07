@@ -11,77 +11,79 @@ function create_space_objects(spStruct)
 	var left = spStruct.cLeft;
 	var right = spStruct.cRight;
 	
+	var secondaryItems = [oItemDash, oItemJump, oItemRocket];
+	
 	//determining room
 	//4 doors
 	if (up && down && left && right)
 	{
-		room_grid = load_csv("spaceAll.csv");
+		room_grid = load_csv("tilemaps/spaceAll.csv");
 	}
 
 	//3 doors
 	else if (up && down && left)
 	{
-		room_grid = load_csv("spaceUpDownLeft.csv");
+		room_grid = load_csv("tilemaps/spaceUpDownLeft.csv");
 	}
 	else if (up && right && down)
 	{
-		room_grid = load_csv("spaceUpRightDown.csv");
+		room_grid = load_csv("tilemaps/spaceUpRightDown.csv");
 	}
 	else if (up && left && right)
 	{
-		room_grid = load_csv("spaceUpRightLeft.csv");
+		room_grid = load_csv("tilemaps/spaceUpRightLeft.csv");
 	}
 	else if (down && left && right)
 	{
-		room_grid = load_csv("spaceRightDownLeft.csv");
+		room_grid = load_csv("tilemaps/spaceRightDownLeft.csv");
 	}
 
 	//2 doors
 	else if (up && down)
 	{
-		room_grid = load_csv("spaceUpDown.csv");
+		room_grid = load_csv("tilemaps/spaceUpDown.csv");
 	}
 	else if (left && right)
 	{
-		room_grid = load_csv("spaceRightLeft.csv");
+		room_grid = load_csv("tilemaps/spaceRightLeft.csv");
 	}
 	else if (up && right)
 	{
-		room_grid = load_csv("spaceUpRight.csv");
+		room_grid = load_csv("tilemaps/spaceUpRight.csv");
 	}
 	else if (right && down)
 	{
-		room_grid = load_csv("spaceRightDown.csv");
+		room_grid = load_csv("tilemaps/spaceRightDown.csv");
 	}
 	else if (down && left)
 	{
-		room_grid = load_csv("spaceDownLeft.csv");
+		room_grid = load_csv("tilemaps/spaceDownLeft.csv");
 	}
 	else if (left && up)
 	{
-		room_grid = load_csv("spaceLeftUp.csv");
+		room_grid = load_csv("tilemaps/spaceLeftUp.csv");
 	}
 
 	//1 door
 	else if (up)
 	{
-		room_grid = load_csv("spaceUp.csv");
+		room_grid = load_csv("tilemaps/spaceUp.csv");
 	}
 	else if (down)
 	{
-		room_grid = load_csv("spaceDown.csv");
+		room_grid = load_csv("tilemaps/spaceDown.csv");
 	}
 	else if (left)
 	{
-		room_grid = load_csv("spaceLeft.csv");
+		room_grid = load_csv("tilemaps/spaceLeft.csv");
 	}
 	else if (right)
 	{
-		room_grid = load_csv("spaceRight.csv");
+		room_grid = load_csv("tilemaps/spaceRight.csv");
 	}
 
 	//there's been an issue
-	else room_grid = load_csv("roomtest.csv");
+	else room_grid = load_csv("tilemaps/roomtest.csv");
 	
 	//placing tiles
 	for (var xx = 0; xx < ds_grid_width(room_grid); xx++)
@@ -108,51 +110,20 @@ function create_space_objects(spStruct)
 			}
 			else if (currentTileID == 645)
 			{
+				//power core at the end of the map
 				if (spStruct == b[array_length(b)-1])
 					instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oEnd);
+				//wallbreaker at the midway point
 				else if (spStruct == a[array_length(a)-1])
 					instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", oItemBreaker);
+				//1 in 3 chance to spawn a secondary item in a room, if it doesn't already exist
+				else
+				{
+					var spawnedItem = secondaryItems[irandom_range(0,2)];
+					if (!instance_exists(spawnedItem) && (irandom_range(0,2) == 2))
+						instance_create_layer(startX + (xx*gridSize), startY + (yy*gridSize) + y, "Player", spawnedItem);
+				}
 			}
 		}
 	}
-	
-	//determine door set
-	//if (spStruct == 
-	
-	//place doors
-	//create_doors(spStruct, oDoorV);
-	//if (left)
-	//{
-	//	var doorTargetX = startX + (0*gridSize);
-	//	var doorTargetY = startY + (9*gridSize) + y;
-	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
-	//		instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
-	//}
-	//if (right)
-	//{
-	//	var doorTargetX = startX + (11*gridSize);
-	//	var doorTargetY = startY + (9*gridSize) + y;
-	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
-	//		instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
-	//}
-	//if (up)
-	//{
-	//	var doorTargetX = startX + (5*gridSize);
-	//	var doorTargetY = startY + (0*gridSize) + y;
-	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
-	//	{
-	//		var door = instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
-	//		door.image_angle = 90;
-	//	}
-	//}
-	//if (down)
-	//{
-	//	var doorTargetX = startX + (5*gridSize);
-	//	var doorTargetY = startY + (11*gridSize) + y;
-	//	if (!place_meeting(doorTargetX, doorTargetY, oGround))
-	//	{
-	//		var door = instance_create_layer(doorTargetX, doorTargetY, "Floor", doorType);
-	//		door.image_angle = 90;
-	//	}
-	//}
 }

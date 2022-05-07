@@ -116,6 +116,7 @@
     {"id":{"name":"sprSpaceURD","path":"sprites/sprSpaceURD/sprSpaceURD.yy",},"order":6,},
     {"id":{"name":"check_flashing","path":"scripts/check_flashing/check_flashing.yy",},"order":12,},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},"order":27,},
+    {"id":{"name":"fontArcadepix8","path":"fonts/fontArcadepix8/fontArcadepix8.yy",},"order":2,},
     {"id":{"name":"sprSpaceL","path":"sprites/sprSpaceL/sprSpaceL.yy",},"order":3,},
     {"id":{"name":"bgm","path":"sounds/bgm/bgm.yy",},"order":6,},
     {"id":{"name":"IntroRoom","path":"rooms/IntroRoom/IntroRoom.yy",},"order":1,},

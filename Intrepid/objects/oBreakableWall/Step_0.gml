@@ -12,3 +12,11 @@ if (collidedbullet != noone)
 		openDoor.image_angle = image_angle;
 	}
 }
+
+if (place_meeting(x, y, oExplode) && oPlayer.wallbreakerunlocked)
+{	
+	audio_play_sound_at(sndKill, x, y, 0, 100, 30, 0.2, false, 1);
+	instance_destroy();
+	var openDoor = instance_create_layer(x, y, "Floor", oBreakableWallCrumble);
+	openDoor.image_angle = image_angle;
+}

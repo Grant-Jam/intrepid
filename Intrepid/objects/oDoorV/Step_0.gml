@@ -9,9 +9,10 @@ if (collidedbullet != noone)
 	openDoor.image_angle = image_angle;
 }
 
-/*if (distance_to_object(oBullet) < 8)
+if (place_meeting(x, y, oExplode))
 {
+	audio_play_sound_at(sndDoorOpen, x, y, 0, 100, 30, 0.2, false, 1);
 	instance_destroy();
 	var openDoor = instance_create_layer(x, y, "Floor", oDoorVOpen);
 	openDoor.image_angle = image_angle;
-}*/
+}
